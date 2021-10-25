@@ -1,13 +1,10 @@
-/* body {
-    margin: 0;
-} */
-
+/* -------------FRAME------------- */
 #black-outer {
     margin: auto;
     background: black;
     height: 90vh;
     display: flex;
-    max-width: 135vh;
+    width: 135vh;
 }
 
 #cork {
@@ -31,4 +28,44 @@
     margin: auto;
     height: 91%;
     background: white;
+    display: flex;
+}
+
+/* -------------GRID------------- */
+
+#block-container {
+    display: flex;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    width: 90%;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+#block {
+    width: 167px;
+    height: 180px;
+    
+}
+
+.block-tools {
+    border: 1px solid white;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+}
+
+.block-subject {
+    border: 1px solid;
+}
+
+.bio,
+.chem,
+.phys {
+    border-top: 2px solid black;
+}
+
+.beh {
+    border-left: 2px solid;
 }
