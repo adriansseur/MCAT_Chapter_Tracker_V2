@@ -1,0 +1,34 @@
+/* body {
+    margin: 0;
+} */
+
+#black-outer {
+    margin: auto;
+    background: black;
+    height: 90vh;
+    display: flex;
+    max-width: 135vh;
+}
+
+#cork {
+    width: 95%;
+    margin: auto;
+    height: 92%;
+    background: rgb(172, 97, 4);
+    display: flex;
+}
+
+#black-inner {
+    width: 94%;
+    margin: auto;
+    height: 91%;
+    background: black;
+    display: flex;
+}
+
+#whiteboard {
+    width: 94%;
+    margin: auto;
+    height: 91%;
+    background: white;
+}
