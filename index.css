@@ -1,4 +1,4 @@
-/* -------------FRAME------------- */
+/* -------------FRAME-------------------------- */
 #black-outer {
     margin: auto;
     background: black;
@@ -31,7 +31,7 @@
     display: flex;
 }
 
-/* -------------GRID------------- */
+/* -------------GRID-------------------------- */
 
 #block-container {
     display: flex;
@@ -68,4 +68,28 @@
 
 .beh {
     border-left: 2px solid;
+}
+
+/* -------------BLOCK NAMES-------------------------- */
+
+#block-name {
+    border-bottom: 2px solid;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* -------------BUTTONS-------------------------- */
+
+.block-subject button {
+    margin: 3px;
+    margin-top: 15px;
+    width: 35px;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+}
+
+.block-subject button:hover {
+    cursor: pointer;
+    color: red;
 }
