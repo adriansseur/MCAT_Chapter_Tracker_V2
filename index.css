@@ -78,7 +78,7 @@
     font-size: 1.5rem;
 }
 
-/* -------------BUTTONS-------------------------- */
+/* -------------NUMBER BUTTONS-------------------------- */
 
 .block-subject button {
     margin: 2px;
@@ -88,11 +88,6 @@
     background: none;
     border: none;
     font-size: 1.25rem;
-}
-
-.block-subject button:hover {
-    cursor: pointer;
-    color: red;
 }
 
 /* -------------TOOLS-------------------------- */
@@ -174,5 +169,5 @@
 #red-marker:hover {
     cursor: pointer;
     background: lightgray;
-    border: 1px solid white;
+    border: 3px solid black;
 }
