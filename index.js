@@ -1,4 +1,4 @@
-
+// Adding number buttons to each subject block
 
 const blockSubjects = document.querySelectorAll(".block-subject")
 
@@ -11,3 +11,5 @@ function addNumbers(item) {
         btn.textContent = i + 1
     }
 }
+
+// Connect markers to actions
