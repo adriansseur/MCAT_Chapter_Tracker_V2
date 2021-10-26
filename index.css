@@ -100,19 +100,23 @@
 #tools-container {
     width: 150px;
     height: 160px;
-    border: 1px solid;  /*----eliminate-----*/
 }
 
 #top {
     height: 45%;
     width: 100%;
-    background: red;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    
 }
 
 #bottom {
     height: 55%;
     width: 100%;
     display: flex;
+    align-items: center;
+    border: 1px solid rgb(211, 211, 211);
 }
 
 #bottom-left {
@@ -128,5 +132,47 @@
     width: 43%;
     border-left: 4px solid rgb(74, 74, 74);
     background: linear-gradient(to left, white 50%, gray);
+}
 
+#top-tools {
+    height: 85%;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+}
+
+#eraser {
+    margin-left: 6px;
+    width: 70px;
+    height: 100px;
+    border: 1px solid rgb(79, 79, 79);
+    border-radius: 10px;
+}
+
+
+#tools-space {
+    width: 20px;
+}
+
+#green-marker,
+#red-marker {
+    width: 24px;
+    height: 100px;
+    border: 1px solid rgb(79, 79, 79);
+}
+
+#green-marker {
+    background: lightgreen;
+}
+
+#red-marker {
+    background: lightcoral;
+}
+
+#eraser:hover,
+#green-marker:hover,
+#red-marker:hover {
+    cursor: pointer;
+    background: lightgray;
+    border: 1px solid white;
 }
