@@ -1,14 +1,3 @@
-// Adding number buttons to each subject block
-
-const blockSubjects = document.querySelectorAll(".block-subject")
-
-blockSubjects.forEach(function(block) {
-    for (let i = 0; i < 12; i++) {
-        const btn = document.createElement("button")
-        block.appendChild(btn)
-        btn.textContent = i + 1
-    }
-})
 
 // Preparing local Storage
 
@@ -36,17 +25,17 @@ for (let i = 0; i < storageKeys.length; i++) {
 }
 
 
-// Connect markers to actions
+// Detect which tool (eraser, greenMarker, redMarker, or none) is active -------------------------
 
 const outside = document.getElementById("html")
 outside.addEventListener("click", function() {
-    console.log("Outside clicked.")
+    console.log("Outside clicked.")  // remove ---------------------------------------
     deactivateTools()
 })
 
 const eraser = document.getElementById("eraser")
 eraser.addEventListener("click", function(e) {
-    console.log("Eraser clicked.")
+    console.log("Eraser clicked.")  // remove ---------------------------------------
     deactivateTools()
     eraser.classList.add("active")
     e.stopPropagation() // prevents parent (outside) from being clicked
@@ -54,7 +43,7 @@ eraser.addEventListener("click", function(e) {
 
 const greenMarker = document.getElementById("green-marker")
 greenMarker.addEventListener("click", function(e) {
-    console.log("Green marker clicked.")
+    console.log("Green marker clicked.")  // remove ---------------------------------------
     deactivateTools()
     greenMarker.classList.add("active")
     e.stopPropagation()  // prevents parent (outside) from being clicked
@@ -62,7 +51,7 @@ greenMarker.addEventListener("click", function(e) {
 
 const redMarker = document.getElementById("red-marker")
 redMarker.addEventListener("click", function(e) {
-    console.log("Red marker clicked.")
+    console.log("Red marker clicked.")  // remove ---------------------------------------
     deactivateTools()
     redMarker.classList.add("active")
     e.stopPropagation()  // prevents parent (outside) from being clicked
@@ -74,3 +63,70 @@ function deactivateTools() {
     greenMarker.classList.remove("active")
     redMarker.classList.remove("active")
 }
+
+// -----------------------------------------------------------------------------------------------------------
+
+// Number Buttons
+
+const blockSubjects = document.querySelectorAll(".block-subject")
+const btnPrefixes = ["bio", "chem", "phys", "beh", "org", "biochem", "cars"]
+
+for (let h = 0; h < 7; h++) {
+    for (let i = 0; i < 12; i++) {
+        const btn = document.createElement("button")
+        
+        btn.id = `${btnPrefixes[h]}-btn-${i + 1}`
+        blockSubjects[h].appendChild(btn)
+        btn.textContent = i + 1
+        
+        btn.addEventListener("click", function(e) {
+            if (greenMarker.classList.contains("active")) {
+                const gottenData = JSON.parse(localStorage.getItem(storageKeys[h]))
+                gottenData[i] = "g"
+                localStorage.setItem(storageKeys[h], JSON.stringify(gottenData))
+                e.stopPropagation()
+                renderColors()
+            }
+        })
+
+        btn.addEventListener("click", function(e) {
+            if (redMarker.classList.contains("active")) {
+                const gottenData = JSON.parse(localStorage.getItem(storageKeys[h]))
+                gottenData[i] = "r"
+                localStorage.setItem(storageKeys[h], JSON.stringify(gottenData))
+                e.stopPropagation()
+                renderColors()
+            }
+        })
+
+        btn.addEventListener("click", function(e) {
+            if (eraser.classList.contains("active")) {
+                const gottenData = JSON.parse(localStorage.getItem(storageKeys[h]))
+                gottenData[i] = "b"
+                localStorage.setItem(storageKeys[h], JSON.stringify(gottenData))
+                e.stopPropagation()
+                renderColors()
+            }
+        })
+    }      
+}
+
+// Render data from local Storage
+renderColors()
+
+function renderColors() {
+    for (let h = 0; h < 7; h++) {
+        for (let i = 0; i < 12; i++) {
+            const gottenData = JSON.parse(localStorage.getItem(storageKeys[h]))
+            const btn = document.getElementById(`${btnPrefixes[h]}-btn-${i + 1}`)
+            if (gottenData[i] === "g") {
+                btn.style.color = "green"
+            } else if (gottenData[i] === "r") {
+                btn.style.color = "red"
+            } else if (gottenData[i] === "b"){
+                btn.style.color = "black"
+            }
+        }
+    }
+}
+
