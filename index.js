@@ -121,10 +121,13 @@ function renderColors() {
             const btn = document.getElementById(`${btnPrefixes[h]}-btn-${i + 1}`)
             if (gottenData[i] === "g") {
                 btn.style.color = "green"
+                btn.style.fontWeight = "700"
             } else if (gottenData[i] === "r") {
                 btn.style.color = "red"
+                btn.style.fontWeight = "700"
             } else if (gottenData[i] === "b"){
                 btn.style.color = "black"
+                btn.style.fontWeight = "300"
             }
         }
     }

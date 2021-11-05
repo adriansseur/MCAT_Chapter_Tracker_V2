@@ -1,3 +1,7 @@
+html {
+    font-family: 'Kalam', cursive;
+}
+
 /* -------------FRAME-------------------------- */
 #black-outer {
     margin: auto;
@@ -81,9 +85,11 @@
 /* -------------NUMBER BUTTONS-------------------------- */
 
 .block-subject button {
+    font-family: 'Kalam', cursive;
+    padding: 0;
     margin: 2px;
-    margin-top: 17px;
-    margin-left: 5px;
+    margin-top: 10px;
+    margin-left: 6.5px;
     width: 30px;
     background: none;
     border: none;
