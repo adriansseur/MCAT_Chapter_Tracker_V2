@@ -29,13 +29,11 @@ for (let i = 0; i < storageKeys.length; i++) {
 
 const outside = document.getElementById("html")
 outside.addEventListener("click", function() {
-    console.log("Outside clicked.")  // remove ---------------------------------------
     deactivateTools()
 })
 
 const eraser = document.getElementById("eraser")
 eraser.addEventListener("click", function(e) {
-    console.log("Eraser clicked.")  // remove ---------------------------------------
     deactivateTools()
     eraser.classList.add("active")
     e.stopPropagation() // prevents parent (outside) from being clicked
@@ -43,7 +41,6 @@ eraser.addEventListener("click", function(e) {
 
 const greenMarker = document.getElementById("green-marker")
 greenMarker.addEventListener("click", function(e) {
-    console.log("Green marker clicked.")  // remove ---------------------------------------
     deactivateTools()
     greenMarker.classList.add("active")
     e.stopPropagation()  // prevents parent (outside) from being clicked
@@ -51,7 +48,6 @@ greenMarker.addEventListener("click", function(e) {
 
 const redMarker = document.getElementById("red-marker")
 redMarker.addEventListener("click", function(e) {
-    console.log("Red marker clicked.")  // remove ---------------------------------------
     deactivateTools()
     redMarker.classList.add("active")
     e.stopPropagation()  // prevents parent (outside) from being clicked
@@ -80,33 +76,17 @@ for (let h = 0; h < 7; h++) {
         btn.textContent = i + 1
         
         btn.addEventListener("click", function(e) {
+            const gottenData = JSON.parse(localStorage.getItem(storageKeys[h]))
             if (greenMarker.classList.contains("active")) {
-                const gottenData = JSON.parse(localStorage.getItem(storageKeys[h]))
                 gottenData[i] = "g"
-                localStorage.setItem(storageKeys[h], JSON.stringify(gottenData))
-                e.stopPropagation()
-                renderColors()
-            }
-        })
-
-        btn.addEventListener("click", function(e) {
-            if (redMarker.classList.contains("active")) {
-                const gottenData = JSON.parse(localStorage.getItem(storageKeys[h]))
+            } else if (redMarker.classList.contains("active")) {
                 gottenData[i] = "r"
-                localStorage.setItem(storageKeys[h], JSON.stringify(gottenData))
-                e.stopPropagation()
-                renderColors()
-            }
-        })
-
-        btn.addEventListener("click", function(e) {
-            if (eraser.classList.contains("active")) {
-                const gottenData = JSON.parse(localStorage.getItem(storageKeys[h]))
+            } else if (eraser.classList.contains("active")) {
                 gottenData[i] = "b"
-                localStorage.setItem(storageKeys[h], JSON.stringify(gottenData))
-                e.stopPropagation()
-                renderColors()
             }
+            localStorage.setItem(storageKeys[h], JSON.stringify(gottenData))
+            e.stopPropagation()
+            renderColors()
         })
     }      
 }
