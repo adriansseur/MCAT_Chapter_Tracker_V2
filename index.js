@@ -30,12 +30,14 @@ for (let i = 0; i < storageKeys.length; i++) {
 const outside = document.getElementById("html")
 outside.addEventListener("click", function() {
     deactivateTools()
+    updateToolStyles()
 })
 
 const eraser = document.getElementById("eraser")
 eraser.addEventListener("click", function(e) {
     deactivateTools()
     eraser.classList.add("active")
+    updateToolStyles()
     e.stopPropagation() // prevents parent (outside) from being clicked
 })
 
@@ -43,6 +45,7 @@ const greenMarker = document.getElementById("green-marker")
 greenMarker.addEventListener("click", function(e) {
     deactivateTools()
     greenMarker.classList.add("active")
+    updateToolStyles()
     e.stopPropagation()  // prevents parent (outside) from being clicked
 })
 
@@ -50,6 +53,7 @@ const redMarker = document.getElementById("red-marker")
 redMarker.addEventListener("click", function(e) {
     deactivateTools()
     redMarker.classList.add("active")
+    updateToolStyles()
     e.stopPropagation()  // prevents parent (outside) from being clicked
 })
 
@@ -60,6 +64,21 @@ function deactivateTools() {
     redMarker.classList.remove("active")
 }
 
+// Styles Tool to denote it is active
+function styleTool(tool) {
+    if (tool.classList.contains("active")) {
+        tool.style.border = "5px solid red"
+    } else {
+        tool.style.border = "1px solid rgb(79, 79, 79)"
+    }
+}
+
+// Styles all tools according to current active status
+function updateToolStyles() {
+    styleTool(eraser)
+    styleTool(greenMarker)
+    styleTool(redMarker)
+}
 // -----------------------------------------------------------------------------------------------------------
 
 // Number Buttons
