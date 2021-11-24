@@ -6,9 +6,11 @@ html {
 #black-outer {
     margin: auto;
     background: black;
-    height: 90vh;
+    /* height: 90vh; */
+    height: calc(90px*6.319);
     display: flex;
-    width: 135vh;
+    /* width: 135vh; */
+    width: calc(135px*6.319);
 }
 
 #cork {
