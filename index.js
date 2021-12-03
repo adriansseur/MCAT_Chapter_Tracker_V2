@@ -30,6 +30,7 @@ for (let i = 0; i < storageKeys.length; i++) {
 const outside = document.getElementById("html")
 outside.addEventListener("click", function() {
     deactivateTools()
+    aliveOrDeadBtns()
     updateToolStyles()
 })
 
@@ -37,6 +38,7 @@ const eraser = document.getElementById("eraser")
 eraser.addEventListener("click", function(e) {
     deactivateTools()
     eraser.classList.add("active")
+    aliveOrDeadBtns()
     updateToolStyles()
     e.stopPropagation() // prevents parent (outside) from being clicked
 })
@@ -45,6 +47,7 @@ const greenMarker = document.getElementById("green-marker")
 greenMarker.addEventListener("click", function(e) {
     deactivateTools()
     greenMarker.classList.add("active")
+    aliveOrDeadBtns()
     updateToolStyles()
     e.stopPropagation()  // prevents parent (outside) from being clicked
 })
@@ -53,6 +56,7 @@ const redMarker = document.getElementById("red-marker")
 redMarker.addEventListener("click", function(e) {
     deactivateTools()
     redMarker.classList.add("active")
+    aliveOrDeadBtns()
     updateToolStyles()
     e.stopPropagation()  // prevents parent (outside) from being clicked
 })
@@ -110,6 +114,43 @@ for (let h = 0; h < 7; h++) {
     }      
 }
 
+// Make buttons come alive if any tool is selected
+function aliveOrDeadBtns() {
+    if (greenMarker.classList.contains("active")) {
+        for (let h = 0; h < 7; h++) {
+            for (let i = 0; i < 12; i++) {
+                const btn = document.getElementById(`${btnPrefixes[h]}-btn-${i + 1}`)
+                btn.style.cursor = `url(green_pointer.png), auto`
+                btn.classList.add("activated")
+            }
+        }
+    } else if (redMarker.classList.contains("active")) {
+        for (let h = 0; h < 7; h++) {
+            for (let i = 0; i < 12; i++) {
+                const btn = document.getElementById(`${btnPrefixes[h]}-btn-${i + 1}`)
+                btn.style.cursor = `url(red_pointer.png), auto`
+                btn.classList.add("activated")
+            }
+        }
+    } else if (eraser.classList.contains("active")) {
+        for (let h = 0; h < 7; h++) {
+            for (let i = 0; i < 12; i++) {
+                const btn = document.getElementById(`${btnPrefixes[h]}-btn-${i + 1}`)
+                btn.style.cursor = `url(eraser_pointer.png), auto`
+                btn.classList.add("activated")
+            }
+        }
+    } else {
+        for (let h = 0; h < 7; h++) {
+            for (let i = 0; i < 12; i++) {
+                const btn = document.getElementById(`${btnPrefixes[h]}-btn-${i + 1}`)
+                btn.style.cursor = "auto"
+                btn.classList.remove("activated")
+            }
+        }
+    }
+}
+
 // Render data from local Storage
 renderColors()
 
@@ -131,4 +172,3 @@ function renderColors() {
         }
     }
 }
-
