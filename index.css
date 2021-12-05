@@ -98,13 +98,15 @@ html {
     font-size: 1.25rem;
 }
 
-.activated {
-    background: none;
+.activated-animation:hover {
+    animation: btnHover 0.2s ease 0s infinite alternate;
 }
 
-.activated:hover {
-    background: lightgray;
+@keyframes btnHover {
+    from {font-weight: 300;}
+    to {font-weight: 700;}
 }
+
 /* -------------TOOLS-------------------------- */
 
 #tools-container {
@@ -186,5 +188,3 @@ html {
     background: lightgray;
     border: 3px solid black;
 }
-
-/* -------------TESTING-------------------------- */
