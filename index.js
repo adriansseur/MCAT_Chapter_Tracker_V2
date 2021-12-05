@@ -122,6 +122,7 @@ function aliveOrDeadBtns() {
                 const btn = document.getElementById(`${btnPrefixes[h]}-btn-${i + 1}`)
                 btn.style.cursor = `url(pointers/green_pointer.png), auto`
                 btn.classList.add("activated")
+                btn.classList.add("activated-animation")
             }
         }
     } else if (redMarker.classList.contains("active")) {
@@ -129,7 +130,7 @@ function aliveOrDeadBtns() {
             for (let i = 0; i < 12; i++) {
                 const btn = document.getElementById(`${btnPrefixes[h]}-btn-${i + 1}`)
                 btn.style.cursor = `url(pointers/red_pointer.png), auto`
-                btn.classList.add("activated")
+                btn.classList.add("activated-animation")
             }
         }
     } else if (eraser.classList.contains("active")) {
@@ -137,7 +138,7 @@ function aliveOrDeadBtns() {
             for (let i = 0; i < 12; i++) {
                 const btn = document.getElementById(`${btnPrefixes[h]}-btn-${i + 1}`)
                 btn.style.cursor = `url(pointers/eraser_pointer.png), auto`
-                btn.classList.add("activated")
+                btn.classList.add("activated-animation")
             }
         }
     } else {
@@ -145,7 +146,7 @@ function aliveOrDeadBtns() {
             for (let i = 0; i < 12; i++) {
                 const btn = document.getElementById(`${btnPrefixes[h]}-btn-${i + 1}`)
                 btn.style.cursor = "auto"
-                btn.classList.remove("activated")
+                btn.classList.remove("activated-animation")
             }
         }
     }
