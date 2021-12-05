@@ -120,7 +120,7 @@ function aliveOrDeadBtns() {
         for (let h = 0; h < 7; h++) {
             for (let i = 0; i < 12; i++) {
                 const btn = document.getElementById(`${btnPrefixes[h]}-btn-${i + 1}`)
-                btn.style.cursor = `url(green_pointer.png), auto`
+                btn.style.cursor = `url(pointers/green_pointer.png), auto`
                 btn.classList.add("activated")
             }
         }
@@ -128,7 +128,7 @@ function aliveOrDeadBtns() {
         for (let h = 0; h < 7; h++) {
             for (let i = 0; i < 12; i++) {
                 const btn = document.getElementById(`${btnPrefixes[h]}-btn-${i + 1}`)
-                btn.style.cursor = `url(red_pointer.png), auto`
+                btn.style.cursor = `url(pointers/red_pointer.png), auto`
                 btn.classList.add("activated")
             }
         }
@@ -136,7 +136,7 @@ function aliveOrDeadBtns() {
         for (let h = 0; h < 7; h++) {
             for (let i = 0; i < 12; i++) {
                 const btn = document.getElementById(`${btnPrefixes[h]}-btn-${i + 1}`)
-                btn.style.cursor = `url(eraser_pointer.png), auto`
+                btn.style.cursor = `url(pointers/eraser_pointer.png), auto`
                 btn.classList.add("activated")
             }
         }
