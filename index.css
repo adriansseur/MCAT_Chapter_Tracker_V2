@@ -2,64 +2,76 @@ html {
     font-family: 'Kalam', cursive;
 }
 
+body {
+    /* height: 100vh; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
 /* -------------FRAME-------------------------- */
 #black-outer {
-    margin: auto;
+    margin: 10%;
     background: black;
     /* height: 90vh; */
-    height: calc(90px*6.319);
+    /* height: calc(90px*6.319); */
     display: flex;
     /* width: 135vh; */
     width: calc(135px*6.319);
+    padding: 1rem;
 }
 
 #cork {
-    width: 95%;
+    /* width: 95%; */
     margin: auto;
-    height: 92%;
+    /* height: 92%; */
     background: rgb(172, 97, 4);
     display: flex;
+    padding: 1rem;
 }
 
 #black-inner {
-    width: 94%;
+    /* width: 94%; */
     margin: auto;
-    height: 91%;
+    /* height: 91%; */
     background: black;
     display: flex;
+    padding: 1rem;
 }
 
 #whiteboard {
-    width: 94%;
+    /* width: 94%; */
     margin: auto;
-    height: 91%;
+    /* height: 91%; */
     background: white;
     display: flex;
+    padding: 1rem;
 }
 
 /* -------------GRID-------------------------- */
 
 #block-container {
     display: flex;
-    border-bottom: 1px solid;
-    border-right: 1px solid;
+    justify-content: center;
+    /* border-bottom: 1px solid; */
+    /* border-right: 1px solid; */
     width: 90%;
-    margin: auto;
+    margin: 2rem auto;
     flex-wrap: wrap;
 }
 
 #block {
+    margin: 0.25rem;
     width: 158.85px;
-    height: 180px;
-    
+    /* height: 180px; */
 }
 
 .block-tools {
     border: 1px solid white;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-    border-top: 2px solid white;
-    border-left: 2px solid white;
+    /* border-right: 1px solid black; */
+    /* border-bottom: 1px solid black; */
+    /* border-top: 2px solid white; */
+    /* border-left: 2px solid white; */
 }
 
 .block-subject {
@@ -69,17 +81,17 @@ html {
 .bio,
 .chem,
 .phys {
-    border-top: 2px solid black;
+    /* border-top: 2px solid black; */
 }
 
 .beh {
-    border-left: 2px solid;
+    /* border-left: 2px solid; */
 }
 
 /* -------------BLOCK NAMES-------------------------- */
 
 #block-name {
-    border-bottom: 2px solid;
+    border-bottom: 1px solid;
     text-align: center;
     font-size: 1.5rem;
 }
