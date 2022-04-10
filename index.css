@@ -1,99 +1,77 @@
-html {
-    font-family: 'Kalam', cursive;
+* {
+    box-sizing: border-box;
 }
 
 body {
-    /* height: 100vh; */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Kalam', cursive;
     display: flex;
-    /* align-items: center; */
     justify-content: center;
+    align-items: center;
 }
 
 /* -------------FRAME-------------------------- */
 #black-outer {
-    margin: 10%;
     background: black;
-    /* height: 90vh; */
-    /* height: calc(90px*6.319); */
     display: flex;
-    /* width: 135vh; */
-    width: calc(135px*6.319);
+    height: 320px;
+    width: 560px;
     padding: 1rem;
+    position: relative;
+    top: 0;
 }
 
 #cork {
-    /* width: 95%; */
-    margin: auto;
-    /* height: 92%; */
+    width: calc(560px - 1rem);
     background: rgb(172, 97, 4);
     display: flex;
     padding: 1rem;
 }
 
 #black-inner {
-    /* width: 94%; */
-    margin: auto;
-    /* height: 91%; */
+    width: calc(560px - 4rem);
     background: black;
     display: flex;
     padding: 1rem;
 }
 
 #whiteboard {
-    /* width: 94%; */
-    margin: auto;
-    /* height: 91%; */
+    width: calc(560px - 4rem);
     background: white;
     display: flex;
-    padding: 1rem;
+    justify-content: center;
+    align-items: center;
 }
 
 /* -------------GRID-------------------------- */
 
 #block-container {
-    display: flex;
-    justify-content: center;
-    /* border-bottom: 1px solid; */
-    /* border-right: 1px solid; */
-    width: 90%;
-    margin: 2rem auto;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(4, 100px);
+    height: calc(100% - 2rem);
 }
 
 #block {
     margin: 0.25rem;
-    width: 158.85px;
-    /* height: 180px; */
-}
-
-.block-tools {
-    border: 1px solid white;
-    /* border-right: 1px solid black; */
-    /* border-bottom: 1px solid black; */
-    /* border-top: 2px solid white; */
-    /* border-left: 2px solid white; */
 }
 
 .block-subject {
     border: 1px solid;
-}
-
-.bio,
-.chem,
-.phys {
-    /* border-top: 2px solid black; */
-}
-
-.beh {
-    /* border-left: 2px solid; */
+    display: grid;
+    grid-template: repeat(4, auto) / repeat(4, auto)
 }
 
 /* -------------BLOCK NAMES-------------------------- */
 
 #block-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-bottom: 1px solid;
-    text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.5%;
+    grid-column: 1 / -1;
 }
 
 /* -------------NUMBER BUTTONS-------------------------- */
@@ -101,13 +79,9 @@ body {
 .block-subject button {
     font-family: 'Kalam', cursive;
     padding: 0;
-    margin: 2px;
-    margin-top: 10px;
-    margin-left: 6.5px;
-    width: 30px;
     background: none;
     border: none;
-    font-size: 1.25rem;
+    font-size: 1.25%;
 }
 
 .activated-animation:hover {
@@ -122,66 +96,49 @@ body {
 /* -------------TOOLS-------------------------- */
 
 #tools-container {
-    width: 150px;
-    height: 160px;
-}
-
-#top {
-    height: 45%;
+    height: 100%;
     width: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    
-}
-
-#bottom {
-    height: 55%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    border: 1px solid rgb(211, 211, 211);
-}
-
-#bottom-left {
-    height: 100%;
-    width: 57%;
-    background: white;
-    border-right: 8px solid white;
-    background: linear-gradient(to left, rgb(228, 228, 228) 65%, gray);
-}
-
-#bottom-right {
-    height: 100%;
-    width: 43%;
-    border-left: 4px solid rgb(74, 74, 74);
-    background: linear-gradient(to left, white 50%, gray);
-}
-
-#top-tools {
-    height: 85%;
-    width: 95%;
-    margin: 0 auto;
-    display: flex;
+    position: relative;
 }
 
 #eraser {
-    margin-left: 6px;
-    width: 70px;
-    height: 100px;
     border: 1px solid rgb(79, 79, 79);
     border-radius: 10px;
+    height: 100%;
+    width: 45%;
+    margin-left: 2.5%;
 }
 
+#eraser-cup {
+    height: 50%;
+    width: 50%;
+    background: linear-gradient(to left, rgb(228, 228, 228) 65%, gray);
+    position: absolute;
+    bottom: 0;
+}
 
-#tools-space {
-    width: 20px;
+#markers {
+    margin-left: 2.5%;
+    display: flex;
+    width: 50%;
+    justify-content: center;
+}
+
+#markers-cup {
+    height: 50%;
+    width: 50%;
+    background: linear-gradient(to left, white 50%, gray);
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 #green-marker,
 #red-marker {
-    width: 24px;
-    height: 100px;
+    margin: 0;
+    padding: 0;
+    width: 45%;
     border: 1px solid rgb(79, 79, 79);
 }
 
@@ -199,4 +156,30 @@ body {
     cursor: pointer;
     background: lightgray;
     border: 3px solid black;
+}
+
+@media (min-width: 768px) {
+    #black-outer {
+        transform: scale(1.3);
+    }
+}
+
+@media (min-width: 1024px) {
+    #black-outer {
+        transform: scale(1.7);
+    }
+}
+
+@media (min-width: 1440px) {
+    #black-outer {
+        transform: scale(2.5);
+    }
+}
+
+@media (orientation: portrait) {
+    #black-outer {
+        transform: rotate(90deg);
+        height: 320px;
+        width: 560px;
+    }
 }

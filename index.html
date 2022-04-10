@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
@@ -11,27 +11,28 @@
     <link href="index.css" rel="stylesheet">
 </head>
 <body>
+
+    <!-- FRAME -->
+
     <div id="black-outer">
         <div id="cork">
             <div id="black-inner">
                 <div id="whiteboard">
+
+                    <!-- FRAME -->
+
                     <div id="block-container">
-                        <div id="block" class="block-tools">
+
+                        <div id="block">
                             <div id="tools-container">
-                                <div id="top">
-                                    <div id="top-tools">
-                                        <button id="eraser" class=""></button>
-                                        <div id="tools-space"></div>
-                                        <button id="green-marker" class=""></button>
-                                        <button id="red-marker" class=""></button>
-                                    </div>
+                                <button id="eraser" class=""></button>
+                                <div id="eraser-cup"></div>
+                                <div id="markers">
+                                    <button id="green-marker" class=""></button>
+                                    <button id="red-marker" class=""></button>
                                 </div>
-                                <div id="bottom">
-                                    <div id="bottom-left"></div>
-                                    <div id="bottom-right"></div>
-                                </div>
+                                <div id="markers-cup"></div>
                             </div>
-                            
                         </div>
                         <div id="block" class="block-subject bio">
                             <div id="block-name">Bio</div>
@@ -55,10 +56,16 @@
                             <div id="block-name">CARS</div>
                         </div>
                     </div>
+
+                    <!-- FRAME -->
+
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- FRAME -->
+
 </body>
 <script src="index.js"></script>
 </html>
